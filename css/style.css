@@ -38,5 +38,19 @@ section, footer{
 }
 
 .second-image {
-  content: url(../assets/images/conduce.jpg);
+  background-image: url(../assets/images/conduce.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 37.5vh;
+}
+
+.content-info {
+  display: relative;
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 37.5vh;
+  padding: 2rem;
+}
+
+.btn-yellow {
+  background-color: #ffc107;
 }

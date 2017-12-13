@@ -1,1 +1,25 @@
-/* Los estilos de tu proyecto */
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+.no-gutters {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.masthead-image {
+  content: url(../assets/images/taxi.jpg);
+}
+
+.phone-image {
+  content: url(../assets/images/iPhone6Plus.png);
+  background-color: #f7b617;
+  padding: 2rem;
+  outline: 1px solid white;
+}

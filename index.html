@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title> LabCar </title>
-		<link rel="shortcut icon" href="assets/images/icon_car.png" type="image/x-icon">
-		<!--Import bootstrap.css-->
-		<link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css" />
-		<!-- style.css-->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-	</head>
-	<body>
-		<!--Import jQuery before bootstrap.js-->
-		<script type="text/javascript" src="vendors/js/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>
-		<!-- app.js-->
-		<script type="text/javascript" src="js/app.js"></script>
-	</body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> LabCar </title>
+	<link rel="shortcut icon" href="assets/images/icon_car.png" type="image/x-icon">
+	<!--Import bootstrap.css-->
+	<link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css" />
+	<!-- style.css-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+	<!-- Navegador -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<!-- El logotipo y el icono que despliega el menú se agrupa para mostrarlos mejor en los dispositivos móviles -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="glyphicon glyphicon-align-justify"></span>
+						</button>
+						<a class="navbar-brand" href="#">
+							<img alt="Brand" src="assets/images/logoForma.png">
+						</a>
+					</div>
+					<!-- Agrupar los enlaces de navegación para ocultar al minimizar la barra  / pull-right utilizar para modo escritorio-->
+					<div class="collapse navbar-collapse navbar-ex1-collapse col-md-offset-9">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">Viaja</a>
+							</li>
+							<li>
+								<a href="#">Conduce</a>
+							</li>
+							<li>
+								<a href="#">Inicia sesión</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- Section primary -->
+	<section>
+		
+	</section>
+
+	<!--Import jQuery before bootstrap.js-->
+	<script type="text/javascript" src="vendors/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>
+	<!-- app.js-->
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+
 </html>

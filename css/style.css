@@ -1,4 +1,4 @@
-/* Reset */
+/* ------------------ Reset ------------------ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,20 +6,37 @@
 }
 
 body {
-  background-color: white;
-}
-.no-gutters {
-  padding-left: 0px;
-  padding-right: 0px;
+  background-color: #ffc107;
 }
 
-.masthead-image {
+section, footer{
+  color: #ffff;
+}
+
+/* ------------------ Clases Reutilizables------------------ */
+.no-gutters {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  outline: 1.5px solid #ffff;
+}
+/* ------------------ Para el barra de navegacion ------------------ */
+.bar-icon {
+  color:#c9c9c9;
+}
+/* ------------------ Para los section con images ------------------ */
+.primary-image {
   content: url(../assets/images/taxi.jpg);
 }
 
 .phone-image {
   content: url(../assets/images/iPhone6Plus.png);
-  background-color: #f7b617;
-  padding: 2rem;
-  outline: 1px solid white;
+}
+
+.second-image {
+  content: url(../assets/images/conduce.jpg);
 }

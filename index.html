@@ -30,7 +30,7 @@
 						</a>
 					</div>
 					<!-- Agrupar los enlaces de navegación para ocultar al minimizar la barra  nav-left/ pull-right utilizar para modo escritorio-->
-					<div class="collapse navbar-collapse navbar-ex1-collapse col-md-offset-9">
+					<div class="collapse navbar-collapse navbar-ex1-collapse col-sm-offset-7 col-md-offset-9">
 						<ul class="nav navbar-nav">
 							<li class="active">
 								<a href="#">Viaja</a>
@@ -52,7 +52,29 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 no-gutters">
-					<div class="primary-image img-responsive"></div>
+					<div class="primary-image img-responsive">
+						<div class="primary-info col-xs-push-3 col-xs-9 col-sm-push-6 col-sm-6 col-md-push-7 col-md-5">
+							<div class="visible-xs-block">
+								<h3 class="text-left">Comienza a viajar con LabCar </h3>
+								<button type="button" class="btn btn-white">
+									<strong> Descarga el app </strong>
+								</button>
+							</div>
+							<div class="hidden-xs">
+								<h2 class="text-left">Disfruta del viaje </h2>
+								<h2 class="text-left">Eres dueño de tu tiempo </h2>
+								<br>
+								<p class="text-left">Viaja con</p>
+								<button type="button" class="btn btn-white text-uppercase">
+									<strong> Regístrate </strong>
+								</button>
+								<hr>
+								<button type="button" class="btn btn-white">
+									<strong> Conviértete en un conductor </strong>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -61,12 +83,21 @@
 	<section>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="col-md-10 container-section">
-						<h2 class="text-center">La nueva app</h2>
-						<div class="col-md-offset-1 phone-image img-responsive"></div>
+				<div class="col-xs-12">
+					<div class="col-sm-12 col-md-10 container-section">
+						<h2 class="text-center visible-xs-block">La nueva app</h2>
+						<div class="col-md-offset-1 col-sm-5 col-md-5 phone-image img-responsive"></div>
+						<div class="col-sm-7 col-md-5  hidden-xs">
+							<h2 class="text-left">Descarga la nueva app</h2>
+							<br>
+							<p class="text-left">La versión actualizada de LabCar esta llena de nuevas funciones para llegar a donde tu quieras aún más fácil y rápido</p>
+							<br>
+							<p class="text-left">Con solo tocar un botón, un auto llega justo a tu ubicación. Súbete y no te preocupes; tu conductor sabe exactamente a dónde ir.</p>
+						</div> 
 					</div>
-					<p class="text-left">Llega a tu destino aún más rápido</p>
+					<div class="visible-xs-block">
+						<p class="text-left">Llega a tu destino aún más rápido</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -77,10 +108,12 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 no-gutters">
 					<div class="second-image img-responsive">
-						<div class="content-info pull-rigth col-md-offset-8">
+						<div class="second-info pull-rigth col-md-offset-8">
 							<h3 class="text-left">Conduce cuando quieras</h3>
 							<p class="text-left">LabCar es una opción flexible para alcanzar tus metas financieras</p>
-							<button type="button" class="btn btn-yellow">Conviértete en conductor</button>
+							<button type="button" class="btn btn-yellow">
+								<strong> Conviértete en conductor </strong>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -91,17 +124,84 @@
 	<section>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<h3 class="text-left">Tarifas</h3>
-					<p class="text-left">Consulta las tarifas LabCar aquí</p>
-					<button type="button" class="btn btn-yellow">¡Trazar tu ruta!</button>
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<div class="content-information">
+						<h3 class="text-left">Tarifas</h3>
+						<p class="text-left">Consulta las tarifas LabCar aquí</p>
+						<form class="col-xs-11 form-horizontal" role="form">
+							<div class="form-group">
+								<img class="position-icon" src="assets/images/shape.png" alt="inicio">
+								<input id="start" type="text" class="form-control style-input" placeholder="Ingresa su punto de partida">
+							</div>
+							<div class="form-group">
+								<img class="position-icon" src="assets/images/shape2.png" alt="termino">
+								<input id="end" type="text" class="form-control style-input" placeholder="Ingresa su destino">
+							</div>
+							<div class="form-group text-center">
+								<button id="search" type="submit" class="btn btn-white text-uppercase">
+									<strong> ¡Trazar tu ruta! </strong>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<div class="container-section text-center">
+						<div class="map-image" id="map"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<!-- Footer -->
+	<footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="logo-footer"></div>
+					<hr>
+				</div>
+				<div class="col-xs-6 col-sm-3 col-md-3 col-md-offset-3">
+					<p class="text-left">Viaja</p>
+					<p class="text-left">Conduce</p>
+					<p class="text-left">Ciudades</p>
+					<p class="text-left">Entregas</p>
+					<p class="text-left">¿Cómo funciona?</p>
+					<p class="text-left">Países</p>
+					<p class="text-left">Seguridad</p>
+					<p class="text-left">Seguridad</p>
+				</div>
+				<div class="hidden-xs col-sm-3 col-md-3">
+					<p class="text-left">Oportunidades</p>
+					<p class="text-left">Nuestra historia</p>
+					<p class="text-left">API de LabCar</p>
+					<p class="text-left">Eventos</p>
+					<p class="text-left">Desarrolladores</p>
+					<p class="text-left">Servicios</p>
+					<p class="text-left">Laboratoria</p>
+					<p class="text-left">Coders</p>
+				</div>
+				<div class="hidden-xs col-sm-3 col-md-3">
+					<div class="google-play logos-style hidden-xs"></div>
+					<div class="app-store logos-style hidden-xs"></div>
+				</div>
+				<div class="col-xs-6 col-sm-3 col-md-12">
+					<i class="fa fa-facebook margin-icon" aria-hidden="true"></i>
+					<i class="fa fa-twitter margin-icon" aria-hidden="true"></i>
+					<i class="fa fa-linkedin margin-icon" aria-hidden="true"></i>
+					<i class="fa fa-apple margin-icon" aria-hidden="true"></i>
+					<i class="fa fa-play margin-icon" aria-hidden="true"></i>
+					<div class="google-play logos-style visible-xs-block"></div>
+					<div class="app-store logos-style visible-xs-block"></div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<hr>
+					<p class="text-left"> © 2017 LabCar technologies Inc. </p>
+				</div>
 
-
-
+			</div>
+	</footer>
+	<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDopowPNGcU5I-Qc8mkpFpESkGec2yXy6I&callback=initMap"></script>-->
 	<!--Import jQuery before bootstrap.js-->
 	<script type="text/javascript" src="vendors/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>

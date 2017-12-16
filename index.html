@@ -7,6 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> LabCar </title>
 	<link rel="shortcut icon" href="assets/images/icon_car.png" type="image/x-icon">
+	<!--Fuente-->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" rel="stylesheet">
+	<!--Iconos-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--Import bootstrap.css-->
 	<link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css" />
@@ -14,12 +17,12 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
+<body class="modal-open">
 	<!-- Navegador -->
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<!-- El logotipo y el icono que despliega el menú se agrupa para mostrarlos mejor en los dispositivos móviles -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle pull-left bar-icon" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -39,7 +42,7 @@
 								<a href="#">Conduce</a>
 							</li>
 							<li>
-								<a href="#">Inicia sesión</a>
+								<a href="#login" data-toggle="modal">Inicia sesión</a>
 							</li>
 						</ul>
 					</div>
@@ -51,27 +54,38 @@
 	<section>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 no-gutters">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-gutters">
 					<div class="primary-image img-responsive">
-						<div class="primary-info col-xs-push-3 col-xs-9 col-sm-push-6 col-sm-6 col-md-push-7 col-md-5">
+						<div class="primary-info col-xs-push-3 col-xs-9 col-sm-push-5 col-sm-7 col-md-push-7 col-md-5">
 							<div class="visible-xs-block">
-								<h3 class="text-left">Comienza a viajar con LabCar </h3>
+								<h3 class="text-left">Comienza a viajar con
+									<div class="logo-white reducir-logo"></div>
+								</h3>
 								<button type="button" class="btn btn-white">
 									<strong> Descarga el app </strong>
 								</button>
 							</div>
-							<div class="hidden-xs">
-								<h2 class="text-left">Disfruta del viaje </h2>
-								<h2 class="text-left">Eres dueño de tu tiempo </h2>
-								<br>
-								<p class="text-left">Viaja con</p>
-								<button type="button" class="btn btn-white text-uppercase">
-									<strong> Regístrate </strong>
-								</button>
-								<hr>
-								<button type="button" class="btn btn-white">
-									<strong> Conviértete en un conductor </strong>
-								</button>
+							<div class="row">
+								<div class="hidden-xs">
+									<h2 class="text-left">
+										<strong> Disfruta del viaje </strong>
+									</h2>
+									<h2 class="text-left">
+										<strong> Eres dueño de tu tiempo </strong>
+									</h2>
+									<h4 class="text-left">Viaja con
+										<div class="logo-white reducir-logo"></div>
+									</h4>
+									<button type="button" class="btn btn-white text-uppercase">
+										<strong> Regístrate </strong>
+									</button>
+									<div>
+										<span class="hr"> O bien</span>
+									</div>
+									<button type="button" class="btn btn-white">
+										<strong> Conviértete en un conductor </strong>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -92,8 +106,9 @@
 							<br>
 							<p class="text-left">La versión actualizada de LabCar esta llena de nuevas funciones para llegar a donde tu quieras aún más fácil y rápido</p>
 							<br>
-							<p class="text-left">Con solo tocar un botón, un auto llega justo a tu ubicación. Súbete y no te preocupes; tu conductor sabe exactamente a dónde ir.</p>
-						</div> 
+							<p class="text-left">Con solo tocar un botón, un auto llega justo a tu ubicación. Súbete y no te preocupes; tu conductor sabe exactamente
+								a dónde ir.</p>
+						</div>
 					</div>
 					<div class="visible-xs-block">
 						<p class="text-left">Llega a tu destino aún más rápido</p>
@@ -106,7 +121,7 @@
 	<section>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 no-gutters">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-gutters">
 					<div class="second-image img-responsive">
 						<div class="second-info pull-rigth col-md-offset-8">
 							<h3 class="text-left">Conduce cuando quieras</h3>
@@ -124,7 +139,7 @@
 	<section>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 					<div class="content-information">
 						<h3 class="text-left">Tarifas</h3>
 						<p class="text-left">Consulta las tarifas LabCar aquí</p>
@@ -145,7 +160,7 @@
 						</form>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 					<div class="container-section text-center">
 						<div class="map-image" id="map"></div>
 					</div>
@@ -157,31 +172,71 @@
 	<footer>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="logo-footer"></div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="logo-white"></div>
 					<hr>
 				</div>
 				<div class="col-xs-6 col-sm-3 col-md-3 col-md-offset-3">
-					<p class="text-left">Viaja</p>
-					<p class="text-left">Conduce</p>
-					<p class="text-left">Ciudades</p>
-					<p class="text-left">Entregas</p>
-					<p class="text-left">¿Cómo funciona?</p>
-					<p class="text-left">Países</p>
-					<p class="text-left">Seguridad</p>
-					<p class="text-left">Seguridad</p>
+					<ul class="list-footer">
+						<li>
+							<a href="#">Viaja</a>
+						</li>
+						<li>
+							<a href="#">conduce</a>
+						</li>
+						<li>
+							<a href="#">Ciudades</a>
+						</li>
+						<li>
+							<a href="#">Entregas</a>
+						</li>
+						<li>
+							<a href="#">¿Cómo funciona?</a>
+						</li>
+						<li>
+							<a href="#">Países</a>
+						</li>
+						<li>
+							<a href="#">Seguridad</a>
+						</li>
+						<li>
+							<a href="#">Seguridad</a>
+						</li>
+					</ul>
 				</div>
 				<div class="hidden-xs col-sm-3 col-md-3">
-					<p class="text-left">Oportunidades</p>
-					<p class="text-left">Nuestra historia</p>
-					<p class="text-left">API de LabCar</p>
-					<p class="text-left">Eventos</p>
-					<p class="text-left">Desarrolladores</p>
-					<p class="text-left">Servicios</p>
-					<p class="text-left">Laboratoria</p>
-					<p class="text-left">Coders</p>
+					<ul class="list-footer">
+						<li>
+							<a href="#">Oportunidades</a>
+						</li>
+						<li>
+							<a href="#">Nuestra historia</a>
+						</li>
+						<li>
+							<a href="#">API de LabCar</a>
+						</li>
+						<li>
+							<a href="#">Eventos</a>
+						</li>
+						<li>
+							<a href="#"></a>Desarrolladores</a>
+						</li>
+						<li>
+							<a href="#">Servicios</a>
+						</li>
+						<li>
+							<a href="#">Laboratoria</a>
+						</li>
+						<li>
+							<a href="#">Coders</a>
+						</li>
+					</ul>
 				</div>
-				<div class="hidden-xs col-sm-3 col-md-3">
+				<div class="hidden-xs col-sm-2 col-md-2">
+					<br>
+					<br>
+					<br>
+					<br>
 					<div class="google-play logos-style hidden-xs"></div>
 					<div class="app-store logos-style hidden-xs"></div>
 				</div>
@@ -194,13 +249,52 @@
 					<div class="google-play logos-style visible-xs-block"></div>
 					<div class="app-store logos-style visible-xs-block"></div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<hr>
 					<p class="text-left"> © 2017 LabCar technologies Inc. </p>
 				</div>
-
 			</div>
 	</footer>
+	<!-- Modales -->
+		<!--Login-->
+	<div class="modal fade in style-modal" id="login">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+					<i class="fa fa-user-circle" aria-hidden="true"></i>
+				</div>
+				<div class="modal-body">
+					<div class="container-modal text-center">
+						<form>
+							<div class="input-group">
+								<div class="input-group-addon">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</div>
+								<input type="text" class="form-control" placeholder="Username">
+							</div>
+							<br>
+							<div class="input-group">
+								<div class="input-group-addon">
+									<i class="fa fa-lock" aria-hidden="true"></i>
+								</div>
+								<input type="password" class="form-control" placeholder="Password">
+							</div>
+							<br>
+							<button class="btn btn-default btn-yellow" type="submit">LOGING</button>
+							<br>
+							<br>
+							<p>Forgot password? <a href="#" class="text-danger">Click here</a></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<!--Registrate-->
+
 	<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDopowPNGcU5I-Qc8mkpFpESkGec2yXy6I&callback=initMap"></script>-->
 	<!--Import jQuery before bootstrap.js-->
 	<script type="text/javascript" src="vendors/js/jquery-3.2.1.min.js"></script>

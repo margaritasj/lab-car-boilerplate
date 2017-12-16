@@ -4,6 +4,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #ffff;
 }
 
 body {
@@ -57,16 +59,35 @@ hr {
   background-image: url(../assets/images/taxi.jpg);
   background-repeat: no-repeat;
   background-position: center 90%;
-  background-size: 100%;
-  min-height: 100vh;
+  background-size: cover;
+  min-height: 90vh;
   position: relative;
 }
 
 .primary-info {
   background: #ffc107;
-  padding: 2rem;
-  margin-top: 15rem;
+  padding: 1rem 3rem;
+  top: 23rem;
   position: absolute;
+}
+
+.hr::before {
+  content:" ";
+  background-color:#fff;
+  position: relative;
+  display: inline-block;
+  width: 14rem;
+  height: 0.1rem;
+  margin-right: 2rem;
+}
+
+.hr::after{
+  content:" ";
+  background-color: #fff;
+  display: inline-block;
+  width: 14rem;
+  height: 0.1rem;
+  margin-left: 2rem;
 }
 
 .phone-image {
@@ -98,6 +119,7 @@ hr {
 
 .btn-yellow {
   background-color: #ffc107;
+  color: #ffffff;
 }
 
 .btn-white {
@@ -138,8 +160,28 @@ hr {
   height: 100%;
 }*/
 
-.logo-footer {
+.logo-white {
   content: url(../assets/images/logoBlanco.png);
+  display: inline;
+}
+
+.reducir-logo {
+  width: 25%;
+}
+
+.list-footer {
+  list-style: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.list-footer li {
+  margin: 1rem 0;
+}
+
+.list-footer a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .margin-icon {
@@ -157,4 +199,37 @@ hr {
 .logos-style {
   width: 90%;
   margin: 2rem 0;
+}
+/* ------------- Para modal login ------------- */
+.style-modal {
+  display: block; 
+  margin-top: 8rem;
+  color: black;
+  font-weight: 600;
+
+}
+
+.fa-user-circle::before{
+  color:#ffc107 ;
+  font-size: 6rem;
+  padding: 1rem;
+}
+
+.container-modal {
+  width: 100%;
+  padding: 2.5rem;
+  background-color: #eeeeee;
+  border-radius: 1.3rem;
+}
+
+@media (min-width: 768px) {
+  .primary-info {
+    top: 14rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .primary-info {
+    top: 24rem;
+  }
 }

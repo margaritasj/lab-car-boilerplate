@@ -17,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body class="modal-open">
+<body>
 	<!-- Navegador -->
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
@@ -76,13 +76,13 @@
 									<h4 class="text-left">Viaja con
 										<div class="logo-white reducir-logo"></div>
 									</h4>
-									<button type="button" class="btn btn-white text-uppercase">
+									<button type="button" class="btn btn-white text-uppercase" data-toggle="modal" data-target="#sign-up">
 										<strong> Regístrate </strong>
 									</button>
 									<div>
 										<span class="hr"> O bien</span>
 									</div>
-									<button type="button" class="btn btn-white">
+									<button type="button" class="btn btn-white" data-toggle="modal" data-target="#become-driver">
 										<strong> Conviértete en un conductor </strong>
 									</button>
 								</div>
@@ -126,7 +126,7 @@
 						<div class="second-info pull-rigth col-md-offset-8">
 							<h3 class="text-left">Conduce cuando quieras</h3>
 							<p class="text-left">LabCar es una opción flexible para alcanzar tus metas financieras</p>
-							<button type="button" class="btn btn-yellow">
+							<button type="button" class="btn btn-yellow" data-toggle="modal" data-target="#become-driver">
 								<strong> Conviértete en conductor </strong>
 							</button>
 						</div>
@@ -256,8 +256,8 @@
 			</div>
 	</footer>
 	<!-- Modales -->
-		<!--Login-->
-	<div class="modal fade in style-modal" id="login">
+	<!--Login-->
+	<div class="modal fade in display-none style-modal" id="login">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header text-center">
@@ -286,14 +286,134 @@
 							<button class="btn btn-default btn-yellow" type="submit">LOGING</button>
 							<br>
 							<br>
-							<p>Forgot password? <a href="#" class="text-danger">Click here</a></p>
+							<p>Forgot password?
+								<a href="#" class="text-danger">Click here</a>
+							</p>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-		<!--Registrate-->
+	<!--Registrate-->
+	<div class="modal fade in display-none style-modal" id="sign-up">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="container-modal text-center">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<button class="btn btn-default btn-style account-btn" type="submit">¿Ya tienes una cuenta?</button>
+						<p>O CREA UNA NUEVA CUENTA</p>
+						<form>
+							<div class="form-group">
+								<label class="sr-only">Nombre</label>
+								<input type="text" class="form-control input-account" placeholder="Nombre">
+								<label class="sr-only">Apellido</label>
+								<input type="text" class="form-control input-account" placeholder="Apellido">
+							</div>
+							<div class="form-group">
+								<label class="sr-only">Correo electronico</label>
+								<input type="email" class="form-control" placeholder="Correo electronico: ejemplo@correo.mx">
+							</div>
+							<div class="form-group">
+								<label class="sr-only">Teléfono</label>
+								<input type="email" class="form-control" placeholder="Correo electronico: ejemplo@correo.mx">
+							</div>
+							<div class="form-group">
+								<label class="sr-only">Contraseña</label>
+								<input type="password" class="form-control" placeholder="Correo electronico: ejemplo@correo.mx">
+							</div>
+							<div class="form-group">
+								<label class="sr-only">Ciudad</label>
+								<input type="password" class="form-control" placeholder="Ciudad">
+							</div>
+							<div class="form-group">
+								<label class="sr-only">(Opcional) Código de invitación</label>
+								<input type="password" class="form-control" placeholder="(Opcional) Codigo de invitación">
+							</div>
+						</form>
+						<button class="btn btn-default btn-style down-btn" type="submit">¿Como te enteraste de nosotros?
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</button>
+						<button class="btn btn-default btn-style submit-btn" type="submit">ENVIAR</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Conviertete en conductor-->
+	<div class="modal fade in display-none style-modal" id="become-driver">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="container-modal text-center">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<form>
+							<div class="form-group">
+								<p class="black-text">¿Tiene vehiculos de 4 puertas?</p>
+								<select class="form-control">
+									<option>Si</option>
+									<option>No</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<p class="black-text">Marca</p>
+								<select class="form-control">
+									<option>Audi</option>
+									<option>Honda</option>
+									<option>Cadillac</option>
+									<option>Ford</option>
+									<option>Mazda</option>
+									<option>KIA</option>
+									<option>Nissan</option>
+									<option>Chevrolet</option>
+									<option>Toyota</option>
+								</select>
+								<p>¿No ves tu vehículo en la lista? Envía un correo electrónico a
+									<br>
+									<a href="#">sociosmdv@uber.com</a>
+								</p>
+							</div>
+							<div class="form-group">
+								<p class="black-text">Modelo</p>
+								<select class="form-control">
+									<option>Malibu</option>
+									<option>A1</option>
+									<option>A2</option>
+									<option>Camaro</option>
+									<option>Orlando</option>
+									<option>Civic</option>
+									<option>Jazz</option>
+									<option>Mazda3</option>
+									<option>Mazda5</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<p class="black-text">Año</p>
+								<select class="form-control">
+									<option>2014</option>
+									<option>2015</option>
+									<option>2016</option>
+									<option>2017</option>
+									<option>2018</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<p class="black-text">Número de mátricula</p>
+								<input type="text" class="form-control" placeholder="Número de mátricula">
+								<p>La información de la matricula ayuda a los clientes a identificar tu vehiculo</p>
+							</div>
+						</form>
+						<button class="btn btn-default btn-style submit-btn" type="submit">ENVIAR</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDopowPNGcU5I-Qc8mkpFpESkGec2yXy6I&callback=initMap"></script>-->
 	<!--Import jQuery before bootstrap.js-->

@@ -5,11 +5,11 @@
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
-  color: #ffff;
 }
 
 body {
   background-color: #ffc107;
+  color: #ffff;
 }
 
 nav {
@@ -45,15 +45,22 @@ hr {
   outline: 1.5px solid #ffff;
 }
 
+.logo-white {
+  content: url(../assets/images/logoBlanco.png);
+  display: inline;
+}
+
+.reducir-logo {
+  width: 25%;
+}
+
 
 /* ------------------ Para el barra de navegacion ------------------ */
-
 .bar-icon {
   color: #c9c9c9;
 }
 
-
-/* ------------------ Para los section con images ------------------ */
+/* ------------------ Para los section ------------------ */
 
 .primary-image {
   background-image: url(../assets/images/taxi.jpg);
@@ -67,7 +74,7 @@ hr {
 .primary-info {
   background: #ffc107;
   padding: 1rem 3rem;
-  top: 23rem;
+  top: 24rem;
   position: absolute;
 }
 
@@ -141,18 +148,17 @@ hr {
   position: absolute;
 }
 
-.form-control::-moz-placeholder {
+.style-input::-moz-placeholder {
   color: #ffffff;
 }
 
-.form-control:-ms-input-placeholder {
+.style-input:-ms-input-placeholder {
   color: #ffffff;
 }
 
-.form-control::-webkit-input-placeholder {
+.style-input::-webkit-input-placeholder {
   color: #ffffff;
 }
-
 
 /* Estilos para el mapa-google*/
 /*
@@ -160,15 +166,7 @@ hr {
   height: 100%;
 }*/
 
-.logo-white {
-  content: url(../assets/images/logoBlanco.png);
-  display: inline;
-}
-
-.reducir-logo {
-  width: 25%;
-}
-
+/* ------------- Para el footer------------- */
 .list-footer {
   list-style: none;
   text-decoration: none;
@@ -200,19 +198,12 @@ hr {
   width: 90%;
   margin: 2rem 0;
 }
-/* ------------- Para modal login ------------- */
+/* ------------- Para modal en general ------------- */
 .style-modal {
   display: block; 
-  margin-top: 8rem;
+  margin-top: 4rem;
   color: black;
   font-weight: 600;
-
-}
-
-.fa-user-circle::before{
-  color:#ffc107 ;
-  font-size: 6rem;
-  padding: 1rem;
 }
 
 .container-modal {
@@ -222,14 +213,66 @@ hr {
   border-radius: 1.3rem;
 }
 
-@media (min-width: 768px) {
-  .primary-info {
-    top: 14rem;
-  }
+.display-none {
+  display: none;
 }
 
-@media (max-width: 768px) {
+/* ------------- Para modal login ------------- */
+.fa-user-circle::before{
+  color: #ffc107;
+  font-size: 6rem;
+  padding: 1rem;
+}
+
+/* ------------- Para modal registrate ------------- */
+.btn-style {
+  color: #ffffff;
+  font-weight: 700;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.account-btn {
+  background-color: #000000;
+  margin: 1rem 0;
+}
+
+.account-btn:hover, .account-btn:focus {
+  background-color: #ffc107;
+}
+
+.input-account {
+  display: inline-block;
+  width: 49.5%;
+}
+
+.down-btn {
+  background-color: #000000;
+}
+
+.down-btn:hover, .down-btn:focus {
+  background-color: #ffc107;
+}
+
+.submit-btn {
+  background-color: #ffc107;
+  margin: 1rem 0;
+}
+
+.black-text {
+  color: #000000;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* ------------ Media para movil ------------ */
+@media (min-width: 768px) {
+  body {
+    color: #ffff;
+  }
+
   .primary-info {
-    top: 24rem;
+    top: 14rem;
   }
 }

@@ -147,14 +147,14 @@
 							<form class="col-xs-11 form-horizontal" role="form">
 								<div class="form-group">
 									<img class="position-icon" src="assets/images/shape.png" alt="inicio">
-									<input id="origin-input" autocomplete="off" type="text" class="form-control style-input" placeholder="Ingresa su punto de partida">
+									<input id="origin-input" type="text" class="form-control style-input" placeholder="Ingresa su punto de partida">
 								</div>
 								<div class="form-group">
 									<img class="position-icon" src="assets/images/shape2.png" alt="termino">
-									<input id="destination-input" autocomplete="off" type="text" class="form-control style-input" placeholder="Ingresa su destino">
+									<input id="destination-input" type="text" class="form-control style-input" placeholder="Ingresa su destino">
 								</div>
 								<div class="form-group text-center">
-									<button id="trace-route" type="button" class="btn btn-white text-uppercase disabled"> 
+									<button id="trace-route" type="button" class="btn btn-white text-uppercase">
 										<strong> ¡Trazar tu ruta! </strong>
 									</button>
 								</div>
@@ -423,8 +423,8 @@
 	</div>
 
 	<!--Import API de Google Maps-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvTX53cxZTTK1ySQ7XC7xD5ABm7-AvnC8&libraries=places&callback=initMap"
-	  async defer></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvTX53cxZTTK1ySQ7XC7xD5ABm7-AvnC8&callback=initMap&sensor=false&amp;libraries=places">
+	</script>
 	<!--Import jQuery before bootstrap.js-->
 	<script type="text/javascript" src="vendors/js/jquery-3.2.1.min.js"></script>
 	<!--Import bootstrap.js-->

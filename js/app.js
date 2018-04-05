@@ -1,105 +1,101 @@
 /* Funcion del API maps*/
-
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    mapTypeControl: false,
-    center: {
-      lat: -11.965947,
-      lng: -77.068975
+  const containerMap = document.getElementById('map');
+  const directionsService = new google.maps.DirectionsService();
+  const directionsDisplay = new google.maps.DirectionsRenderer();
+  const geocoder = new google.maps.Geocoder();
+  // Punto de muestra en el mapa al carga la pagina
+  const losOlivos = {
+    lat: -11.9594,
+    lng: -77.0760
+  };
+
+  // Caracteristicas del mapa 
+  const mapOptions = {
+    zoom: 15,
+    center: losOlivos,
+  };
+
+  // Creamos el mapa con las constantes containerMap y caracteristicas
+  const map = new google.maps.Map(containerMap, mapOptions);
+  directionsDisplay.setMap(map);
+
+  // Aqui indicamos el efecto que tendra el marcador  
+  const markerMap = new google.maps.Marker({
+    position: {
+      lat: losOlivos.lat,
+      lng: losOlivos.lng
     },
-    zoom: 13
+    animation: google.maps.Animation.DROP,
+    map: map
   });
 
-  new AutocompleteDirectionsHandler(map);
-
-  /* document.getElementById('submit').addEventListener('click', function() {
-  calculateAndDisplayRoute(directionsService, directionsDisplay);
-});*/
-}
-
-/**
- * @constructor
- */
-function AutocompleteDirectionsHandler(map) {
-  this.map = map;
-  this.originPlaceId = null;
-  this.destinationPlaceId = null;
-  this.travelMode = 'DRIVING';
-  var originInput = document.getElementById('origin-input');
-  var destinationInput = document.getElementById('destination-input');
-  var btnTraceRoute = document.getElementById('trace-route');
-  this.directionsService = new google.maps.DirectionsService;
-  this.directionsDisplay = new google.maps.DirectionsRenderer;
-  this.directionsDisplay.setMap(map);
-
-  var originAutocomplete = new google.maps.places.Autocomplete(
-    originInput, {
-      placeIdOnly: true
-    });
-  var destinationAutocomplete = new google.maps.places.Autocomplete(
-    destinationInput, {
-      placeIdOnly: true
-    });
-
-  this.setupClickListener('changemode-driving', 'DRIVING');
-
-  this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-  this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
-}
-
-// Sets a listener on a radio button to change the filter type on Places
-// Autocomplete.
-AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
-  var btnTraceRoute = document.getElementById(id);
-  var me = this;
-  btnTraceRoute.addEventListener('click', function() {
-    me.travelMode = mode;
-    me.route();
-  });
-};
-
-AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete, mode) {
-  var me = this;
-  autocomplete.bindTo('bounds', this.map);
-  autocomplete.addListener('place_changed', function() {
-    var place = autocomplete.getPlace();
-    if (!place.place_id) {
-      window.alert('Please select an option from the dropdown list.');
-      return;
-    }
-    if (mode === 'ORIG') {
-      me.originPlaceId = place.place_id;
+  // Realizamos el llamado al evento load para que pueda ubicarme al momento que carge la pagina
+  window.addEventListener('load', function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(getCoords, errorFound);
     } else {
-      me.destinationPlaceId = place.place_id;
+      alert('Tu navegador no soporta el API de Geolocation');
     }
-    me.route();
   });
-};
 
-AutocompleteDirectionsHandler.prototype.route = function() {
-  if (!this.originPlaceId || !this.destinationPlaceId) {
-    return;
+  function errorFound(error) {
+    alert('Un error ocurrió: ' + error.code);
+  };
+
+  function getCoords(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    let myLocation = new google.maps.Marker({
+      position: {
+        lat: lat,
+        lng: lon
+      },
+      animation: google.maps.Animation.DROP,
+      map: map
+    });
+    // Al mapa creado le agrego mi ubicación
+    map.setCenter({
+      lat: lat,
+      lng: lon
+    });
+  };
+
+  // Autocompletamos las direcciones de origen y destino
+  let originInput = document.getElementById('origin-input');
+  let destinationInput = document.getElementById('destination-input');
+
+  // Usando la libraría Autocomplete para el autocompletado de los lugares
+  let autocompleteStar = new google.maps.places.Autocomplete(originInput);
+  let autocompleteEnd = new google.maps.places.Autocomplete(destinationInput);
+
+  autocompleteStar.bindTo('bounds', map);
+  autocompleteEnd.bindTo('bounds', map);
+
+  // Evento que traza la ruta y obtiene información de lo ruta,
+  let btnTraceRoute = document.getElementById('trace-route');
+  btnTraceRoute.addEventListener('click', traceRoute);
+
+  function traceRoute(e) {
+    e.preventDefault();
+    let request = {
+      origin: originInput.value,
+      destination: destinationInput.value,
+      travelMode: 'DRIVING',
+    };
+
+    function callback(result, status) {
+
+      if (status === 'OK') {
+        directionsDisplay.setDirections(result);
+        let distance = result.routes[0].legs[0].distance.value;
+      } else {
+        window.alert('No encontramos la ruta');
+      }
+    }
+
+    directionsService.route(request, callback);
   }
-  var me = this;
-
-  this.directionsService.route({
-    origin: {
-      'placeId': this.originPlaceId
-    },
-    destination: {
-      'placeId': this.destinationPlaceId
-    },
-    travelMode: this.travelMode
-  }, function(response, status) {
-    if (status === 'OK') {
-      me.directionsDisplay.setDirections(response);
-    } else {
-      window.alert('Directions request failed due to ' + status);
-    }
-  });
-};
+}
 
